@@ -1,0 +1,47 @@
+body {
+  background-color: #c0c0c0;
+}
+nav .container-lg {
+  background-color: #343a40;
+}
+.carousel-inner {
+  max-height: 500px;
+}
+.carousel-inner img {
+  object-fit: cover;
+}
+.container-lg {
+  background-color: #ffffff;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+header.masthead {
+  text-align: center;
+  color: white;
+}
+
+.img-wrapper {
+  position: relative;
+  padding-bottom: 100%;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+}
+.img-wrapper img {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.heart {
+  font-size: 25px;
+  color: red;
+}

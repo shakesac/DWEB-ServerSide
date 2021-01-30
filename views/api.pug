@@ -1,0 +1,283 @@
+extends base
+
+block content
+    .row
+        .col.text-left
+            h3 API
+    h4.text-center.font-weight-bold Filmes
+    .row
+        .col
+            table.table
+                thead.thead-light
+                    tr
+                        th(scope='col') Verbo
+                        th(scope='col') URL
+                        th(scope='col') Descrição
+                        th.text-center(scope='col') Códigos
+                        th.text-center(scope='col') Sessão<br>Iniciada
+                        th.text-center(scope='col') Permissão
+                tbody
+                    tr
+                        th(scope='row') GET
+                        td /api/movies
+                        td.text-justify Devolve todos os filmes presentes na base de dados
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-times
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') GET
+                        td /api/movies/
+                            span.text-primary id
+                        td.text-justify Devolve o filme identificado pelo ID pedido
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-times
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') POST
+                        td /api/movies/
+                        td.text-justify Adiciona o filme à base de dados
+                        td.text-center
+                            span.text-success 201
+                            span   
+                            span.text-danger 400
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') PATCH
+                        td /api/movies/
+                            span.text-primary id
+                        td.text-justify Altera apenas os campos actualizados do filme
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') DELETE
+                        td /api/movies/
+                            span.text-primary id
+                        td.text-justify Elimina o registo do filme da base de dados
+                        td.text-center
+                            span.text-success 204
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+    .row
+        .col
+            pre.bg-light.mx-4
+                code.
+                    {
+                        "status": "success",
+                        "requestedAt": "2021-01-30T14:32:46.366Z",
+                        "data": {
+                            "movies": {
+                                "img_url": "https://mb.web.sapo.io/67edfbe216c770d5f4b6341ac9825ba823d66416.jpg",
+                                "createdAt": "2021-01-29T18:22:35.900Z",
+                                "_id": "601452e646819f37c4ea7794",
+                                "title": "Matrix",
+                                "org_title": "The Matrix",
+                                "duration": 136,
+                                "year": 1999,
+                                "overview": "Thomas Anderson é um jovem programador...",
+                                "imdb_rating": 8.7
+                            }
+                        }
+                    }
+    h4.text-center.font-weight-bold.mt-4 Utilizadores
+    .row
+        .col
+            table.table
+                thead.thead-light
+                    tr
+                        th(scope='col') Verbo
+                        th(scope='col') URL
+                        th(scope='col') Descrição
+                        th.text-center(scope='col') Códigos
+                        th.text-center(scope='col') Sessão<br>Iniciada
+                        th.text-center(scope='col') Permissão
+                tbody
+                    tr
+                        th(scope='row') GET
+                        td /api/users
+                        td.text-justify Devolve todos os utilizadores presentes na base de dados
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') GET
+                        td /api/users/
+                            span.text-primary id
+                        td.text-justify Devolve o utilizador identificado pelo ID pedido
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') POST
+                        td /api/user
+                        td.text-justify Regista um utilizador na base de dados
+                        td.text-center
+                            span.text-success 201
+                            span   
+                            span.text-danger 400
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') PATCH
+                        td /api/users/
+                            span.text-primary id
+                        td.text-justify Altera apenas os campos actualizados do utilizador
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+                    tr
+                        th(scope='row') DELETE
+                        td /api/user/
+                            span.text-primary id
+                        td.text-justify Elimina o registo do utilizador da base de dados
+                        td.text-center
+                            span.text-success 204
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin
+    .row
+        .col
+            pre.bg-light.mx-4
+                code.
+                    {
+                        "status": "success",
+                        "data": {
+                        "user": {
+                            "role": "user",
+                            "_id": "6014488fd7cee11dac4ae791",
+                            "name": "Tiago Alves",
+                            "email": "titi@tit.tit",
+                            "password": "$2a$12$6JEHG2chJeQQFFKJVJV1yuYa7b6aMY75bAxXv.TcndTTwb/ukELtu"
+                            }
+                        }
+                    }        
+    h4.text-center.font-weight-bold.mt-4 Autenticação
+    .row
+        .col
+            table.table
+                thead.thead-light
+                    tr
+                        th(scope='col') Verbo
+                        th(scope='col') URL
+                        th(scope='col') Descrição
+                        th.text-center(scope='col') Códigos
+                        th.text-center(scope='col') Sessão<br>Iniciada
+                        th.text-center(scope='col') Permissão
+                tbody
+                    tr
+                        th(scope='row') POST
+                        td /api/users/login
+                        td.text-justify Envia os dados de autenticação para o servidor
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-times
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') GET
+                        td /api/users/logout
+                        td.text-justify.
+                            Devolve um token inválido com 10s até expirar.<br>
+                            (Não é possivel manupilação directa do cookie devido ao uso de <code>httpOnly: true</code>)
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') POST
+                        td /api/user/signup
+                        td.text-justify Regista um utilizador na base de dados
+                        td.text-center
+                            span.text-success 201
+                            span   
+                            span.text-danger 400
+                        td.text-center
+                            i.fas.fa-cross
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') PATCH
+                        td /api/users/updatePassword
+                        td.text-justify Altera a password do utilizador com sessão iniciada
+                        td.text-center
+                            span.text-success 200
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Nenhuma
+                    tr
+                        th(scope='row') DELETE
+                        td /api/user/
+                            span.text-primary id
+                        td.text-justify Elimina o registo do utilizador da base de dados
+                        td.text-center
+                            span.text-success 204
+                            span   
+                            span.text-danger 404
+                        td.text-center
+                            i.fas.fa-check
+                        td.text-center
+                            p Admin.
+    .row
+        .col
+            pre.bg-light.mx-4
+                code.
+                    {
+                        "email": "tiago@yamdb.io",
+                        "password": "pass1234"
+                    }
+             
+                    
+
+

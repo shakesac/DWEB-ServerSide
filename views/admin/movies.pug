@@ -1,0 +1,46 @@
+extends base
+block adminContent
+    h2 Gestão de Filmes
+    div.container
+        div.table-responsive
+            div.table-wrapper
+                .table-title
+                    .row.mb-2
+                        .col
+                        .col.text-right
+                            a.btn.btn-success.btn-sm(
+                                type='button',
+                                onclick='addMovie()'
+                            ) Adicionar filme
+                                i.fas.fa-plus.ml-2
+
+                table.table.table-striped.table-hover.py-5
+                    thead.thead-dark
+                        tr
+                            th Título
+                            th Título Orig
+                            th Ano
+                            th Duração (min)
+                            th Sinopse
+                            th IMDb Rating
+                            th Acção
+                    tbody
+                        each movie in movies
+                            tr
+                                td= movie.title
+                                td= movie.org_title
+                                td.text-center= movie.year
+                                td= `${movie.duration}min`
+                                td.text-justify= movie.overview
+                                td.text-center= movie.imdb_rating
+                                td
+                                    a.btn.btn-primary.mx-1(
+                                        type='button',
+                                        onclick=`updateMovie('${movie.id}', '${movie.title}', '${movie.org_title}', ${movie.year}, ${movie.duration}, '${movie.overview}', ${movie.imdb_rating}, '${movie.img_url}' )`
+                                    )
+                                        i.fas.fa-pencil-alt
+                                    a.btn.btn-danger.m-1(
+                                        type='button',
+                                        onclick=`deleteMovie("${movie.id}")`
+                                    )
+                                        i.fas.fa-trash-alt

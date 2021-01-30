@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title #{title} | YAMDB
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description' content='Mais um site com conteúdo relacionado com filmes.')
+        meta(name='author' content='Miguel Lima, Tiago Alves')
+        link(rel='stylesheet' href='/assets/css/bootstrap.min.css')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css' integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ' crossorigin='anonymous')
+        link(rel='stylesheet' href='/assets/css/yamdb.css')
+
+    body#page-top
+        //NAV
+        include _nav
+
+        //CONTENT
+        .container-lg.shadow
+            block content
+
+        //FOOTER
+        include _footer
+
+
+        script(type='text/javascript', src='/assets/js/jquery-3.5.1.slim.min.js') 
+        script(type='text/javascript', src='/assets/js/bootstrap.bundle.min.js')
+        script(src='/assets/js/axios.min.js')
+        script(type='text/javascript', src='/assets/js/sweetalert2.all.min.js')
+        script(type='text/javascript', src='/assets/js/yamdb.js')
+
+        

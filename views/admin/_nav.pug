@@ -1,0 +1,45 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.sticky-top
+    div.container-lg
+        a.navbar-brand.mx-2(href='/#page-top') (Y)AMDB
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        div.collapse.navbar-collapse(id='navbarSupportedContent')
+            ul.navbar-nav.text-uppercase.mr-auto.mb-2.mb-lg-0
+                li.nav-item
+                    a.nav-link.js-scroll-trigger(href='/admin') Filmes
+                li.nav-item
+                    a.nav-link.js-scroll-trigger(href='/admin/utilizadores') Utilizadores
+            .h-divider
+            if user
+                ul#navPerfil.navbar-nav.text-uppercase.ml-auto.mb-2.mb-lg-0
+                    li.nav-item.dropdown
+                        a#navbarDropdownMenuLink.nav-link.dropdown-toggle(
+                            href='#',
+                            data-toggle='dropdown',
+                            aria-haspopup='true',
+                            aria-expanded='false'
+                        )= user.name.split(' ')[0]
+                        div.dropdown-menu.text-capitalize(aria-labelledby='navbarDropdownMenuLink')
+                            a.dropdown-item(href='#', onclick='changePassword()') Alterar Senha
+                            a.dropdown-item(href='#') Favoritos
+                button.nav-item.mx-2.btn.btn-outline-danger.btn-sm(
+                    id='btnLogout'
+                    onclick='logout()'
+                    type='button'
+                ) Sair
+            else
+                button#btnLogin.nav-item.mx-2.btn.btn-outline-success.btn-sm(
+                    type='button'
+                    onclick='login()'
+                    data-toggle='modal'
+                    data-target='#exampleModalCenter'
+                ) Entrar
+            .h-divider
+            form.d-flex
+                button.btn.btn-link.text-info(id='btnSearch' type='button')
+                    i.fa.fa-search
+                input.form-control.bg-none.border-0.mr-2(
+                    type='search'
+                    placeholder='Procurar'
+                    aria-describedby='btnSearch'
+                )

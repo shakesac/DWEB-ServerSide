@@ -1,0 +1,41 @@
+extends base
+block adminContent
+    h2 Gestão de Utilizadores
+    div.container
+        div.table-responsive
+            div.table-wrapper
+                .table-title
+                    .row.mb-2
+                        .col
+                        .col.text-right
+                            a.btn.btn-success.btn-sm(
+                                type='button',
+                                onclick='addUser()'
+                            ) Adicionar utilizador
+                                i.fas.fa-plus.ml-2
+
+                table.table.table-striped.table-hover.py-5
+                    thead.thead-dark
+                        tr
+                            th Nome
+                            th Email
+                            th Tipo
+                            th Acção
+                    tbody
+                        each user in users
+                            tr
+                                td= user.name
+                                td= user.email
+                                td= user.role
+                                td.text-right
+                                    a.btn.btn-primary.mx-1(
+                                        type='button',
+                                        onclick=`updateUser('${user.id}', '${user.name}', '${user.email}', '${user.role}', '${user.password}', '${user.password_confirm}')`
+                                    )
+                                        i.fas.fa-pencil-alt
+                                    a.btn.btn-danger.mx-1(
+                                        type='button',
+                                        onclick=`deleteUser("${user.id}")`
+                                    )
+                                        i.fas.fa-trash-alt
+                                    

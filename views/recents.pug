@@ -1,0 +1,20 @@
+extends base
+block content
+    section#destaques
+        h2.title.text-uppercase.pt-5.p-3 Filmes
+        div.row
+            //CARDS
+            each movie in movies
+                div.card.col-md-3.col-6.text-center.h-100
+                    - const idBtnMovie = 'btnMovie' + movie.id
+                        a(onclick=`modalMovie('${idBtnMovie}', '${movie.title}', '${movie.org_title}', ${movie.year}, ${movie.duration}, '${movie.overview}', ${movie.imdb_rating}, '${movie.img_url}')`, type='button')
+                            .img-wrapper
+                                img.rounded.mx-auto(
+                                    src=`${movie.img_url}`
+                                    alt=`${movie.title} Poster`
+                                    )
+                            .card-body
+                                h5.card-title= movie.title
+                                p.card-text= movie.year
+                        if user
+                            i.heart.far.fa-heart
